@@ -37,6 +37,13 @@ class Solution:
                 output.append(curr_position.index(whole + s[i+1]))
         print(output)
 
+        if curr_position is X:
+            output.append(0)
+        if curr_position is C:
+            output.extend([0, 0])
+        if curr_position is M:
+            output.extend([0, 0, 0])
+
         return int("".join(str(i) for i in output))
 
 
