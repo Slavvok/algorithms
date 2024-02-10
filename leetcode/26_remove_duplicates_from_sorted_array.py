@@ -28,6 +28,21 @@ class Solution:
         return len(s)
 
 
+class Solution2:
+    """
+    Two pointers solution
+    80 ms, beats 51 %
+    O(n)
+    """
+    def removeDuplicates(self, nums: list[int]) -> int:
+        j = 1
+        for i in range(1, len(nums)):
+            if nums[i] != nums[i - 1]:
+                nums[j] = nums[i]
+                j += 1
+        return j
+
+
 if __name__ == '__main__':
     n = [0, 0, 1, 1, 1, 2, 2, 3, 3, 4]
     result = Solution().removeDuplicates(n)
